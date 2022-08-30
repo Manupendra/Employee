@@ -1,10 +1,11 @@
 package com.employee;
 
 import java.net.URI;
-import java.util.logging.Logger;
 
 import com.employee.*;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans
         .factory.annotation.Autowired;
 import org.springframework.http
@@ -27,7 +28,7 @@ import org.springframework.web.servlet
 @RequestMapping(path = "/employees")
 public class EmployeeSpringController {
 
-    Logger logger = Logger.getLogger(EmployeeSpringController.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(EmployeeSpringController.class);
     @Autowired
     private EmployeeDAO employeeDao;
 
@@ -40,7 +41,7 @@ public class EmployeeSpringController {
 
     public Employees getEmployees()
     {
-        logger.info("GET Response: " + employeeDao.getAllEmployees());
+        logger.info("GET Response: " + employeeDao.getAllEmployees().toString());
         return employeeDao
                 .getAllEmployees();
 
