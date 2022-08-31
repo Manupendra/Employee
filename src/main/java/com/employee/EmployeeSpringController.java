@@ -10,37 +10,36 @@ import org.springframework.beans
         .factory.annotation.Autowired;
 import org.springframework.http
         .ResponseEntity;
-import org.springframework.web.bind
-        .annotation.GetMapping;
-import org.springframework.web.bind
-        .annotation.PostMapping;
-import org.springframework.web.bind
-        .annotation.RequestBody;
-import org.springframework.web.bind
-        .annotation.RequestMapping;
-import org.springframework.web.bind
-        .annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet
         .support.ServletUriComponentsBuilder;
 
 
 @RestController
-@RequestMapping(path = "/employees")
+@RequestMapping(path = "/")
 public class EmployeeSpringController {
 
     private static final Logger logger = LoggerFactory.getLogger(EmployeeSpringController.class);
     @Autowired
     private EmployeeDAO employeeDao;
 
+    //Status of service
+    @GetMapping(
+            path = "/status",
+            produces = "application/json")
+    public Object status() {
+        logger.info("Status check");
+        return "Service is alive";
+    }
+
     // Implementing a GET method
     // to get the list of all
     // the employees
     @GetMapping(
-            path = "/",
+            path = "/employees/get",
             produces = "application/json")
 
-    public Employees getEmployees()
-    {
+    public Employees getEmployees() {
         logger.info("GET Response: " + employeeDao.getAllEmployees().toString());
         return employeeDao
                 .getAllEmployees();
@@ -52,13 +51,12 @@ public class EmployeeSpringController {
     // to add an employee
     // to the list
     @PostMapping(
-            path = "/",
+            path = "/employees/add",
             consumes = "application/json",
             produces = "application/json")
 
     public ResponseEntity<Object> addEmployee(
-            @RequestBody Employee employee)
-    {
+            @RequestBody Employee employee) {
 
         // Creating an ID of an employee
         // from the number of employees
