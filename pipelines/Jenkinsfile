@@ -2,9 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Build and Test') {
+        stage(' Gradle Build and Test') {
             steps {
                 echo 'Building..and Testing ...'
+                script {
+                    sh 'gradle clean build'
+                }
             }
         }
         stage('Deploy') {
