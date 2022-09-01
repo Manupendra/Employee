@@ -17,6 +17,7 @@ pipeline {
         }
         stage('Build docker Image') {
             steps {
+                sh 'docker --help'
                 sh 'docker build --build-arg JAR_FILE=build/libs/\\*.jar -t employee-spring-boot-app:latest .'
             }
         }
