@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools {
         jdk 'jdk'
+        'org.jenkinsci.plugins.docker.commons.tools.DockerTool' '18.09'
     }
     environment {
         dockerhub = credentials('dockerhub')
