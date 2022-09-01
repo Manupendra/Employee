@@ -3,7 +3,9 @@ pipeline {
     tools {
         jdk 'jdk'
     }
-
+    environment {
+        dockerhub = credentials('dockerhub')
+    }
     stages {
         stage('Gradle Build and Test') {
             steps {
@@ -11,6 +13,18 @@ pipeline {
                 withGradle() {
                     sh './gradlew clean build'
                 }
+            }
+        }
+        stage('Build docker Image') {
+            steps {
+                sh 'docker build --build-arg JAR_FILE=build/libs/\*.jar -t employee-spring-boot-app:latest .'
+            }
+        }
+        stage('Push to DockerHub') {
+            steps {
+                sh 'docker tag employee-spring-boot-app:latest manupendra/employee-spring-boot-app:latest'
+                sh 'echo $dockerhub_PSW | docker login -u $dockerhub_USR --password-stdin'
+                sh 'docker push manupendra/employee-spring-boot-app:latest'
             }
         }
         stage('Deploy') {
