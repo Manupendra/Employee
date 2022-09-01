@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        JDK 'jdk'
+    }
 
     stages {
         stage('Gradle Build and Test') {
