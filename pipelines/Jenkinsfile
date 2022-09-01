@@ -1,10 +1,11 @@
 pipeline {
+    agent any
 
     stages {
-        stage(' Gradle Build and Test') {
+        stage('Gradle Build and Test') {
             steps {
                 echo 'Building..and Testing ...'
-                script {
+                withGradle() {
                     sh './gradlew clean build'
                 }
             }
