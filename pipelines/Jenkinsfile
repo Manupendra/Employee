@@ -2,7 +2,6 @@ pipeline {
     agent any
     tools {
         jdk 'jdk'
-        docker 'docker'
     }
     environment {
         dockerhub = credentials('dockerhub')
@@ -16,6 +15,10 @@ pipeline {
                 }
             }
         }
+         stage('Docker Initialize'){
+            def dockerHome = tool 'docker'
+            env.PATH = "${dockerHome}/bin:${env.PATH}"
+         }
         stage('Build docker Image') {
             steps {
                 sh 'docker --help'
