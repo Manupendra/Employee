@@ -48,7 +48,7 @@ We have verified the service after hitting the endpoint **GET** ```/employees/ge
 
 <img width="1440" alt="Screenshot 2022-09-09 at 8 35 30 PM" src="https://user-images.githubusercontent.com/26532939/189482979-7897ef9c-afa6-44a8-9869-c728a623b2d2.png">
 
-**Screenshot of Server trace of the above request**
+**Screenshot of Server trace of the above request in pod**. The following is the command to get the pod logs ```kubectl logs -f <ContainerName>```
 
 <img width="1440" alt="Screenshot 2022-09-09 at 8 34 51 PM" src="https://user-images.githubusercontent.com/26532939/189483041-a26e1a6b-2a7f-4121-97d2-e30efa16f00e.png">
 
