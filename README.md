@@ -58,6 +58,19 @@ Here, we have used jacoco library for code coverage, the following is screenshot
 
 <img width="1438" alt="Screenshot 2022-09-09 at 11 58 17 PM" src="https://user-images.githubusercontent.com/26532939/189483148-b3bc8cf4-f018-4559-b91d-2b02276b6ce3.png">
 
+#### Logging and Visualization using ELK stack 
+
+Server logs been send to Logstash using output log file. Below is screenshot of it.
+
+<img width="1440" alt="Screenshot 2022-09-13 at 6 45 37 PM" src="https://user-images.githubusercontent.com/26532939/189911521-55dae46e-0189-4532-bb2a-c57ce4e3a306.png">
+
+Using ElasticSearch we can see the index of logstash logs, below is screenshot of it 
+
+<img width="1440" alt="Screenshot 2022-09-13 at 6 53 09 PM" src="https://user-images.githubusercontent.com/26532939/189912743-9f786070-63b0-4c95-a3c8-06a2ac396777.png">
+
+Visualize logs in Kibana locally of **logstash-** index 
+
+<img width="1440" alt="Screenshot 2022-09-13 at 6 56 20 PM" src="https://user-images.githubusercontent.com/26532939/189913304-5e6e40a3-5295-4754-b308-b4d3fce7c914.png">
 
 
 
