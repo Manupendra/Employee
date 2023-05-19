@@ -1,5 +1,6 @@
 # Spring Boot Web App
 
+#### This project is demonstrate the CI/CD pipeline, it is build as docker image and pushed to dockerHub repo after that I've deployed in K8s with log are stored in central data store - Logstash and visual and monitor using ELK stask. 
 The project is Spring Boot Application using gradle build tool. It contains 3 endpoints 
 1. **GET** ```/status``` - to check the liveness or readiness of the service
 2. **GET** ```/employees/get``` - to get the list of employees 
