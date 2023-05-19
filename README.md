@@ -1,6 +1,7 @@
-# Spring Boot Web App
+# CI/CD Pipeline Demo with Docker, Kubernetes, ELK Stack, and Code Coverage Analysis using Spring Boot Web App
 
-#### This project is demonstrate the CI/CD pipeline, it is build as docker image and pushed to dockerHub repo after that I've deployed in K8s with log are stored in central data store - Logstash and visual and monitor using ELK stask. 
+#### This project serves as a comprehensive demonstration of a robust CI/CD pipeline. It showcases the seamless integration of various technologies, including Docker, Kubernetes (K8s), and the ELK (Elasticsearch, Logstash, Kibana) Stack. The pipeline facilitates the automated building and deployment of a Docker image, followed by its distribution to a DockerHub repository. Furthermore, the project showcases efficient logging, monitoring, and visualization of the deployed application using the ELK Stack.
+
 The project is Spring Boot Application using gradle build tool. It contains 3 endpoints 
 1. **GET** ```/status``` - to check the liveness or readiness of the service
 2. **GET** ```/employees/get``` - to get the list of employees 
